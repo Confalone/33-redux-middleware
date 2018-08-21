@@ -1,58 +1,17 @@
-![cf](http://i.imgur.com/7v5ASc8.png) 33: Budget Tracker
-======
+# 31: Budget Tracker
+===
 
-## Submission Instructions
-  * Work in a fork of this repository
-  * Work in a branch on your fork
-  * Write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-duncan`
-  * Submit a pull request to this repository
-  * Submit a link to your pull request on canvas
-  * Submit a question, observation, and how long you spent on canvas 
+### Author:
 
-## Learning Objectives
-* students will be able to create and implement custom middleware for redux
+Tyler Confalone
 
-## Requirements
-#### Configuration  
-* Up to you, but should follow industry norms.
- 
-#### Feature Tasks
-* complete all remaining lab 31 and 32 feature tasks
-* add a `logger` middleware to your application's redux store
-* add validation to your redux reducers
+### Description:
 
-Decide what validation you want to add to your reducers. Ideas might include:
+This is a front-end REACT application that allows the user to make a budget.  The user fills can fill out a category form.  I hope you find my application useful, enjoy.
 
-* Prevent an item from being added if it's over budget.
-* Prevent a budget from being created with zero or less dollars.
-* Prevent a budget or item from being created without a name.
+### Instructions
 
-## Example Validation Middleware
-Here's an example validating middleware for an application that implements a
-[kanban board](https://leankit.com/learn/kanban/kanban-board/).
-
-This middleware ensures that data attached to the action satisfies requirements,
-like having certain properties (id, content, categoryId).
-
-```js
-const validateCard = store => next => action => {
-  const isCard = action.type && action.type.startsWith('CARD');
-    if (isCard) {
-      try {
-        const card = action.payload;
-        const notValid = !card.id || !card.content || !card.categoryID;
-        if (notValid) {
-          throw new Error('VALIDATION ERROR: card must include id, content, and categoryID');
-        } else {
-          return next(action);
-        }
-      } catch (err) {
-        console.error(err);
-    }
-  } else {
-    return next(action);
-  }
-}
-
-export default validateCard;
-```
+* fork and clone the repository
+* npm i
+* npm run watch (this should display the application in your browser)
+* In progress . . . 
